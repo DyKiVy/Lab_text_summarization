@@ -47,10 +47,8 @@ def predict(
         print(p.strip().replace("\n", " "))
 
 if __name__ == "__main__":
-    # Считывание входных данных из файла
     with open("input_text.txt", "r") as f:
         input_text = f.read()
 
-    # Преобразование входного текста в резюме
     input_records = [{"text": input_text}]
     predict("IlyaGusev/rut5_base_sum_gazeta", input_records)
