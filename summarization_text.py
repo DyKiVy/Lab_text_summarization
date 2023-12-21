@@ -1,6 +1,11 @@
 from datasets import load_dataset
 dataset = load_dataset("IlyaGusev/gazeta")
 
+from transformers import AutoTokenizer, T5ForConditionalGeneration
+model_name = "IlyaGusev/rut5_base_sum_gazeta"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = T5ForConditionalGeneration.from_pretrained(model_name)
+
 import json
 import torch
 from tqdm.auto import tqdm
