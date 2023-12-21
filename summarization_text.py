@@ -6,13 +6,6 @@ model_name = "IlyaGusev/rut5_base_sum_gazeta"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = T5ForConditionalGeneration.from_pretrained(model_name)
 
-import json
-import torch
-from tqdm.auto import tqdm
-from transformers import AutoTokenizer, T5ForConditionalGeneration
-from datasets import load_dataset
-
-
 def gen_batch(inputs, batch_size):
     batch_start = 0
     while batch_start < len(inputs):
