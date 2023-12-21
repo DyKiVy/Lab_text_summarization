@@ -1,4 +1,5 @@
-!pip install transformers sentencepiece datasets
+%%bash
+pip install transformers sentencepiece datasets
 
 from google.colab import drive
 drive.mount('/content/drive')
