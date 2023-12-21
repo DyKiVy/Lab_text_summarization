@@ -1,6 +1,3 @@
-from google.colab import drive
-drive.mount('/content/drive')
-
 from datasets import load_dataset
 dataset = load_dataset("IlyaGusev/gazeta")
 
