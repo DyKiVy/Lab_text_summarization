@@ -22,7 +22,6 @@ def gen_batch(inputs, batch_size):
         yield inputs[batch_start: batch_start + batch_size]
         batch_start += batch_size
 
-
 def predict(
     model_name,
     input_records,
