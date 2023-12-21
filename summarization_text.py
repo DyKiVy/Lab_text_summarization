@@ -1,20 +1,7 @@
-from datasets import load_dataset
-dataset = load_dataset("IlyaGusev/gazeta")
-
-from transformers import AutoTokenizer, T5ForConditionalGeneration
-model_name = "IlyaGusev/rut5_base_sum_gazeta"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = T5ForConditionalGeneration.from_pretrained(model_name)
-
 import json
 import torch
 from tqdm.auto import tqdm
 from transformers import AutoTokenizer, T5ForConditionalGeneration
-from datasets import load_dataset
-
-model_name = "IlyaGusev/rut5_base_sum_gazeta"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = T5ForConditionalGeneration.from_pretrained(model_name)
 
 def gen_batch(inputs, batch_size):
     batch_start = 0
@@ -25,7 +12,6 @@ def gen_batch(inputs, batch_size):
 def predict(
     model_name,
     input_records,
-    output_file,
     max_source_tokens_count=400,
     max_target_tokens_count=200,
     batch_size=96
@@ -55,33 +41,16 @@ def predict(
             num_beams=2
         )
         summaries = tokenizer.batch_decode(output_ids, skip_special_tokens=True)
-        #for s in summaries:
-        #    print(s)
         predictions.extend(summaries)
-    with open(output_file, "w") as w:
-        for p in predictions:
-            w.write(p.strip().replace("\n", " ") + "\n")
 
-gazeta_test = load_dataset('IlyaGusev/gazeta', revision="v1.0")["test"]
-predict("IlyaGusev/rut5_base_sum_gazeta", list(gazeta_test), "t5_predictions.txt")
+    for p in predictions:
+        print(p.strip().replace("\n", " "))
 
-article_text = input()
+if __name__ == "__main__":
+    # Считывание входных данных из файла
+    with open("input_text.txt", "r") as f:
+        input_text = f.read()
 
-input_ids = tokenizer(
-    [article_text],
-    add_special_tokens=True,
-    padding="max_length",
-    truncation=True,
-    max_length=400,
-    return_tensors="pt"
-)["input_ids"]
-
-output_ids = model.generate(
-    input_ids=input_ids,
-    no_repeat_ngram_size=3,
-    num_beams=5,
-    early_stopping=True
-)[0]
-
-summary = tokenizer.decode(output_ids, skip_special_tokens=True)
-print(summary)
+    # Преобразование входного текста в резюме
+    input_records = [{"text": input_text}]
+    predict("IlyaGusev/rut5_base_sum_gazeta", input_records)
