@@ -33,7 +33,7 @@ def predict(
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = T5ForConditionalGeneration.from_pretrained(model_name).half().to(device)
+    model = T5ForConditionalGeneration.from_pretrained(model_name).to(torch.float).to(device)
 
     predictions = []
     for batch in tqdm(gen_batch(input_records, batch_size)):
