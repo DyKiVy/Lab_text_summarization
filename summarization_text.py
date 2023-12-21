@@ -1,4 +1,3 @@
-%%bash
 pip install transformers sentencepiece datasets
 
 from google.colab import drive
