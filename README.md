@@ -4,7 +4,12 @@
   Разработать нейросеть для сокращения большого обьема текста в его краткое содержание/резюме
 
 ### **Реализация:**
-  На сонове готовой рускоязычной базы данных новостных статей Российских СМИ, была дообучена модель T5ForConditionalGeneration, для получения из любого текста написаного на русском языке 1-3 ёмких предложений, отражающих главную суть. Для этого было реализовано деление на бачти по длинне текста, его последующие токенизирование и деление для предсказания на основе обученой модели, после чего введеный пользователем текст сокращается и выводится итоговый результат.
+  1. На сонове готовой рускоязычной базы данных новостных статей Российских СМИ, была дообучена модель T5ForConditionalGeneration, для получения из любого текста написаного на русском языке 
+  2. 1-3 ёмких предложений, отражающих главную суть.
+    ⋅⋅*Для этого было реализовано деление на бачти по длинне текста, его последующие токенизирование и деление для предсказания на основе обученой модели, после чего
+  3. Введеный пользователем текст сокращается и выводится итоговый результат.
+
+[alt-текст](https://www.google.com/imgres?imgurl=https%3A%2F%2Fc0.klipartz.com%2Fpngpicture%2F410%2F529%2Fgratis-png-signo-de-exclamacion-fuente-roja-signo-de-exclamacion.png&tbnid=lSUQKtJ7QiwUWM&vet=12ahUKEwjt3OCN4PSDAxVOPhAIHc7KDiUQMygcegUIARCXAQ..i&imgrefurl=https%3A%2F%2Fwww.klipartz.com%2Fru%2Fsticker-png-tgrst&docid=YT-S-CkhmvNBFM&w=890&h=1668&q=%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B2%D0%BE%D1%81%D0%BA%D0%BB%D0%B8%D1%86%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B7%D0%BD%D0%B0%D0%BA&ved=2ahUKEwjt3OCN4PSDAxVOPhAIHc7KDiUQMygcegUIARCXAQ)Для сокращения времени ожидания код был реализован на загрузке уже дообученой модели, пример кода обучения можно посмотреть в закоментированном блоке[alt-текст](https://www.google.com/imgres?imgurl=https%3A%2F%2Fc0.klipartz.com%2Fpngpicture%2F410%2F529%2Fgratis-png-signo-de-exclamacion-fuente-roja-signo-de-exclamacion.png&tbnid=lSUQKtJ7QiwUWM&vet=12ahUKEwjt3OCN4PSDAxVOPhAIHc7KDiUQMygcegUIARCXAQ..i&imgrefurl=https%3A%2F%2Fwww.klipartz.com%2Fru%2Fsticker-png-tgrst&docid=YT-S-CkhmvNBFM&w=890&h=1668&q=%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B2%D0%BE%D1%81%D0%BA%D0%BB%D0%B8%D1%86%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B7%D0%BD%D0%B0%D0%BA&ved=2ahUKEwjt3OCN4PSDAxVOPhAIHc7KDiUQMygcegUIARCXAQ) 
 
 ### **Ссылка на файл в [Colab](https://colab.research.google.com/drive/1-YAL2h6rbM7vLwuOvVS24jZMRhbfkTnP#scrollTo=evOtSwsb3Lsu)**
 
