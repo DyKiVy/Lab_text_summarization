@@ -43,8 +43,8 @@
 
 ### **Важная информация:**
 # Из-за ограничений файлов GitHub, а так же для экономии времени дообученая модель скачивается с HuggingFace! В проекте выделен код, который отвечал за дообучение модели.
-![]([https://www.example.com/image.jpg](https://github.com/DyKiVy/Lab_text_summarization/blob/main/%D0%92%D0%B5%D1%81%20%D0%B4%D0%BE))
-![]([https://www.example.com/image.jpg](https://github.com/DyKiVy/Lab_text_summarization/blob/main/%D0%92%D0%B5%D1%81%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5.png))
+![До]([https://www.example.com/image.jpg](https://github.com/DyKiVy/Lab_text_summarization/blob/main/%D0%92%D0%B5%D1%81%20%D0%B4%D0%BE))
+![После]([https://www.example.com/image.jpg](https://github.com/DyKiVy/Lab_text_summarization/blob/main/%D0%92%D0%B5%D1%81%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5.png))
 ### **Ссылка на файл в [Colab](https://colab.research.google.com/drive/1-YAL2h6rbM7vLwuOvVS24jZMRhbfkTnP#scrollTo=evOtSwsb3Lsu)**
 
 ### **Примеры :**
